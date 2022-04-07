@@ -1,0 +1,4 @@
+[submodule "openremote"]
+	path = openremote
+	url = git@github.com:openremote/openremote.git
+	branch = master
