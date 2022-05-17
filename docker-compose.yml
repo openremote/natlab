@@ -92,7 +92,7 @@ services:
     volumes:
       - deployment-data:/deployment
     environment:
-      KEYCLOAK_PASSWORD: secret
+      KEYCLOAK_PASSWORD: ${OR_ADMIN_PASSWORD:-secret}
       KEYCLOAK_FRONTEND_URL: https://natlab.openremote.app/auth
     <<: *awslogs
 
@@ -122,7 +122,7 @@ services:
       OR_EMAIL_PASSWORD:
       OR_EMAIL_X_HEADERS:
       OR_EMAIL_FROM:
-      OR_EMAIL_ADMIN: admin
+      OR_EMAIL_ADMIN:
       OR_HOSTNAME: natlab.openremote.app
       OR_ADDITIONAL_HOSTNAMES: ${OR_ADDITIONAL_HOSTNAMES:-}
       OR_SSL_PORT: ${OR_SSL_PORT:-443}
