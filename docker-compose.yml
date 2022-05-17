@@ -41,7 +41,7 @@ x-logging: &awslogs
     driver: awslogs
     options:
       awslogs-region: ${AWS_REGION:-eu-west-1}
-      awslogs-group: docker-log
+      awslogs-group: ${OR_HOSTNAME}
       awslogs-create-group: 'true'
       tag: "{{.Name}}/{{.ID}}"
 
